@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>T-Killer 3000</title>
+	{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'turkeykill/style.css' %}">
+</head>
+<body>
+	<div class = "wrapper">
+		<div class ="hitpoints"><h3>Remaining Hitpoints: </h3></div>
+		<div class="turkey">
+			<form action="" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="action" value="attack_turkey">
+				<button>Attack Turkey</button>
+			</form>	
+		</div>
+		<div class="record">things displayed here</div>
+		<div class="items">
+			<table>
+				<tr>
+					<th>Item</th>
+					<th>Description</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>Hammer</td>
+					<td>Smash stuff</td>
+					<td>Attack!</td>
+				</tr>
+			</table>
+			<a href=""><button>Visit Store!</button></a>
+		</div>
+	</div>
+</body>
+</html>

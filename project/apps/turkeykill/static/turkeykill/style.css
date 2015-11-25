@@ -3,31 +3,60 @@
 	padding: 0px;
 }
 .wrapper{
-	padding: 20px;/*
-	background-image: url("http://i.imgur.com/RdcuHNc.gif");
-	background-repeat: repeat-y;*/
-	height: 100%;
+	padding: 20px;
+	height: auto;
 	width: 100%;
+	background-color: sienna;
 }
-div{
+/*div{
 	outline: 1px dotted black;
-}
+}*/
 .hitpoints{
-	min-height: 40px;
+	height: 40px;
 	width: 20%;
-	margin: 0px auto;
 	padding: 5px;
+	display: inline-block;
+	background-color: white;
+	margin-bottom: 5px;
+}
+.userpoints{
+	height: 40px;
+	width: 20%;
+	padding: 5px;
+	display: inline-block;
+	margin-left: 150px;
+	vertical-align: top;
+	background-color: white;
+	margin-bottom: 5px;
+}
+h1{
+	display: inline-block;
+	padding: 5px;
+	vertical-align: top;
+	margin-left: 33px;
+	color: white;
+}
+h1:hover{
+	font-family: copperplate;
 }
 .turkey{
 	height: 300px;
 	width: 40%;
 	margin: 0px auto;
+	display: inline-block;
+	vertical-align: top;
+	outline: 
+}
+.turkey img{
+	border-radius: 6px;
 }
 .items{
 	min-height: 40px;
-	width: 40%;
+	width: 50%;
 	margin: 0px auto;
-	padding: 10px;
+	/*padding: 10px;*/
+	display: inline-block;
+	background-color: white;
 }
 .record{
 	height: 400px;
@@ -45,9 +74,33 @@ th, td {
 }
 button{
 	padding: 8px;
-	background-color: orange;
+	background-color: #ff934d;
+	border: none;
+	border-radius: 8px; 
+	margin: 5px;
 }
-.end img{
-	width: 200px;
-	height: 250px;
+.turkeybutt:hover{
+	background-color: teal;
+}
+.turkeybutt{
+	display: inline-block;
+}
+.actionbutt:hover{
+	background-color: lime;
+}
+.lost{
+	height: 100%;
+	background-image: url("http://33.media.tumblr.com/tumblr_mdvn33NPTb1qgx37po3_250.gif")
+}
+.win{
+	height: 100%;
+	background-image: url('http://i.imgur.com/GCD7l8W.gif');
+
+}
+.return{
+	width: 20%;
+	margin-left: 10px ;
+	outline: 1px solid red;
+	background-color: sienna;
+	min-height: 50px;
 }

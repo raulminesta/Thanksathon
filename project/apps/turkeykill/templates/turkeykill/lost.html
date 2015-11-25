@@ -1,3 +1,11 @@
-
-<img class="end" src="http://33.media.tumblr.com/tumblr_mdvn33NPTb1qgx37po3_250.gif">
-<a href="/reset/">Play again?</a>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>T-Killer 3000</title>
+	{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'turkeykill/style.css' %}">
+</head>
+<body>
+	<div class="lost"><div class="return"><h3>Darkness has consumed the galaxy...</h3><a href="{% url 'reset' %}">Play again?</a></div></div>
+</body>
+</html>

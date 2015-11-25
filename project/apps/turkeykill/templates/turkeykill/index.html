@@ -8,33 +8,46 @@
 <body>
 	<div class = "wrapper">
 		<div class ="hitpoints"><h3>Remaining Hitpoints: {{request.session.hitpoints}} </h3></div>
+		<h1>Meat the Turkenator</h1>
+		<div class ="userpoints"><h3>Feathers Collected: {{request.session.userpoints}} </h3></div>
 		<div class="turkey">
+			<img src="{% static 'turkeykill/turkeysprites.jpg' %}">
 			<form action="{% url 'attack' %}" method="post">
 				{% csrf_token %}
 				<input type="hidden" name="action" value="attack_turkey">
-				<button>Attack Turkey</button>
-			</form>	
-			<a href="/reset/">Play again?</a>
-		</div>
-		<div class="record">
-			{% for stuff in request.session.mymessage %}
-			<p>{{stuff}}</p>
-			{% endfor %}
+				<button class="turkeybutt">Attack Turkey</button>
+			</form>
+			<form action="{% url 'reset' %}" method='get'>
+				<button class="turkeybutt">Play Again?</button>	
+			</form>
+			
 		</div>
 		<div class="items">
 			<table>
 				<tr>
 					<th>Item</th>
 					<th>Description</th>
+					<th>Damage Multiplier</th>
 					<th>Action</th>
 				</tr>
+				{% for weapon in weapons %}
 				<tr>
-					<td>Hammer</td>
-					<td>Smash stuff</td>
-					<td>Attack!</td>
+					<td>{{weapon.name}}</td>
+					<td>{{weapon.description}}</td>
+					<td>{{weapon.damage}}</td>
+					<td><form action="{% url 'weapon_attack' %}" method="post">
+						{% csrf_token %}
+						<input type="hidden" name="weapon_attack" value="{{weapon.name}}">
+						<button class="actionbutt">Use</button>
+					</form></td>
 				</tr>
+				{% endfor %}
 			</table>
-			<a href=""><button>Visit Store!</button></a>
+		</div>
+		<div class="record">
+			{% for stuff in request.session.mymessage %}
+			<p>{{stuff}}</p>
+			{% endfor %}
 		</div>
 	</div>
 </body>

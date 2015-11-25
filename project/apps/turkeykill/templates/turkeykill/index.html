@@ -7,15 +7,20 @@
 </head>
 <body>
 	<div class = "wrapper">
-		<div class ="hitpoints"><h3>Remaining Hitpoints: </h3></div>
+		<div class ="hitpoints"><h3>Remaining Hitpoints: {{request.session.hitpoints}} </h3></div>
 		<div class="turkey">
-			<form action="" method="post">
+			<form action="{% url 'attack' %}" method="post">
 				{% csrf_token %}
 				<input type="hidden" name="action" value="attack_turkey">
 				<button>Attack Turkey</button>
 			</form>	
+			<a href="/reset/">Play again?</a>
 		</div>
-		<div class="record">things displayed here</div>
+		<div class="record">
+			{% for stuff in request.session.mymessage %}
+			<p>{{stuff}}</p>
+			{% endfor %}
+		</div>
 		<div class="items">
 			<table>
 				<tr>
